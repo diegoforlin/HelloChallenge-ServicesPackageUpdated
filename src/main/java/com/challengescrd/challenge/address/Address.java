@@ -3,7 +3,6 @@ package com.challengescrd.challenge.address;
 import com.challengescrd.challenge.entities.User;
 import jakarta.persistence.*;
 
-import java.util.List;
 @Entity
 public class Address {
     @Id
@@ -18,8 +17,8 @@ public class Address {
     @JoinColumn(name = "user_id")
     private User user;
 
-    public Address() {
-
+    public Address addresses() {
+        return addresses();
     }
 
     public String getStreet() {
@@ -62,21 +61,21 @@ public class Address {
         this.state = state;
     }
 
-    public void updateAddress(Address newAddress) {
-        if (newAddress.getStreet() != null) {
-            this.street = newAddress.getStreet();
+    public void updateAddresses(Address newAddresses) {
+        if (newAddresses.getStreet() != null) {
+            this.street = newAddresses.getStreet();
         }
-        if (newAddress.getNumber() != null) {
-            this.number = newAddress.getNumber();
+        if (newAddresses.getNumber() != null) {
+            this.number = newAddresses.getNumber();
         }
-        if (newAddress.getNeighborhood() != null) {
-            this.neighborhood = newAddress.getNeighborhood();
+        if (newAddresses.getNeighborhood() != null) {
+            this.neighborhood = newAddresses.getNeighborhood();
         }
-        if (newAddress.getCity() != null) {
-            this.city = newAddress.getCity();
+        if (newAddresses.getCity() != null) {
+            this.city = newAddresses.getCity();
         }
-        if (newAddress.getState() != null) {
-            this.state = newAddress.getState();
+        if (newAddresses.getState() != null) {
+            this.state = newAddresses.getState();
         }
     }
 }

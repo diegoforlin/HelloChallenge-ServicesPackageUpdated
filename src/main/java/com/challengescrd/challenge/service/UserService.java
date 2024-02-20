@@ -3,12 +3,11 @@ package com.challengescrd.challenge.service;
 import com.challengescrd.challenge.entities.User;
 import com.challengescrd.challenge.entities.UserRepository;
 import jakarta.persistence.EntityNotFoundException;
-import org.apache.coyote.Response;
+import jakarta.transaction.Transactional;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class UserService {
@@ -17,32 +16,36 @@ public class UserService {
     public UserService(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
-
+    @Transactional
     public ResponseEntity<User> saveUser(User user) {
         User newUser = userRepository.save(user);
         return ResponseEntity.ok(newUser);
     }
 
+    @Transactional
     public List<User> fetchAllUsers() {
         return userRepository.findAll();
     }
 
-    public User fetchProductById(Long id) {
+    @Transactional
+    public User fetchUserById(Long id) {
         return userRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("User not found with id: " + id));
     }
 
+    @Transactional
     public ResponseEntity<String> deleteUser(Long id) {
         userRepository.deleteById(id);
         return ResponseEntity.ok("User Deleted Successfully");
     }
 
+    @Transactional
     public ResponseEntity<User> updateUser(Long id, User updatedUser) {
         User existingUser = userRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("User not found with id: " + id));
         existingUser.setName(updatedUser.getName());
         existingUser.setCellphone(updatedUser.getCellphone());
-        existingUser.setAddress(updatedUser.getAddress());
+        existingUser.setAddresses(updatedUser.getAddresses());
         User savedEntity = userRepository.save(existingUser);
         return ResponseEntity.ok(savedEntity);
     }

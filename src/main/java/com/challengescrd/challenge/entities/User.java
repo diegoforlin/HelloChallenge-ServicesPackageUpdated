@@ -2,13 +2,13 @@ package com.challengescrd.challenge.entities;
 
 import com.challengescrd.challenge.address.Address;
 import com.challengescrd.challenge.user.UserDTO;
-import com.challengescrd.challenge.user.updateUserDTO;
 import io.swagger.annotations.Api;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Entity
 @Table(name = "tb_user")
@@ -21,10 +21,13 @@ public class User implements Serializable {
     private String cpf;
     private Date birthdate;
     private String cellphone;
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List <Address> address;
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+
+    private List<Address> addresses;
+
     public User() {
     }
+
     public void setId(Long id) {
         this.id = id;
     }
@@ -61,84 +64,27 @@ public class User implements Serializable {
         this.cellphone = cellphone;
     }
 
-    public Address getAddress() {
-        return (List<Address>) address;
+    public List<Address> getAddresses() {
+        return addresses;
     }
 
-    public void setAddress(Address address) {
-        this.address = (List<Address>) address;
+    public void setAddresses(List<Address> addresses) {
+        this.addresses = addresses;
     }
 
-    public User(Long id, String name, String cpf, Date birthdate, String cellphone, Address address) {
+    public User(Long id, String name, String cpf, Date birthdate, String cellphone, List<Address> addresses) {
         this.id = id;
         this.name = name;
         this.cpf = cpf;
         this.birthdate = birthdate;
         this.cellphone = cellphone;
-        this.address = (List<Address>) address;
+        this.addresses = addresses;
     }
-
-    public User(UserDTO user) {
-        this.name = user.name();
-        this.cpf = user.cpf();
-        this.cellphone = user.cellphone();
-        this.birthdate = user.birthdate();
-        this.address = (List<Address>) user.address();
-    }
-
-    public Long getId() {
-        return null;
-    }
-
-    public void updateIntel(updateUserDTO user) {
+    public void update(User updatedUser) {
+        this.name = updatedUser.getName();
+        this.cpf = updatedUser.getCpf();
+        this.birthdate = updatedUser.getBirthdate();
+        this.cellphone = updatedUser.getCellphone();
+        this.addresses = updatedUser.getAddresses();
     }
 }
-
-//    public Long getId() {
-//        this.id = user.id();
-//    }
- 
-//
-//    public Long getId() {
-//        return id;
-//    }
-//
-//    public void updateIntel(updateUserDTO user) {
-//        if (user.name() != null) {
-//            this.name = user.name();
-//        } if(user.cellphone() != null) {
-//            this.cellphone = user.cellphone();
-//        } if (user.address() != null) {
-//            this.address.updateAddress(user.address());
-//        } if(user.birthdate() != null) {
-//            this.birthdate = user.birthdate();
-//        } if(user.cpf() != null) {
-//            this.cpf = user.cpf();
-//        }
-//    }
-//
-//    public String getStreet() {
-//        return this.address.getStreet();
-//
-//    }
-//
-//    public String getNumber() {
-//        return this.address.getNumber();
-//
-//    }
-//
-//    public String getNeighborhood() {
-//        return this.address.getNeighborhood();
-//
-//    }
-//
-//    public String getCity() {
-//        return this.address.getCity();
-//
-//    }
-//
-//    public String getState() {
-//        return this.address.getState();
-//
-//    }
-//

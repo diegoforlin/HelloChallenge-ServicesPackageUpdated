@@ -1,25 +1,16 @@
 package com.challengescrd.challenge.controller;
-import com.challengescrd.challenge.address.Address;
+
 import com.challengescrd.challenge.entities.User;
-import com.challengescrd.challenge.entities.UserRepository;
 import com.challengescrd.challenge.service.UserService;
-import com.challengescrd.challenge.user.UserDTO;
-import com.challengescrd.challenge.user.UserDTOListing;
-import com.challengescrd.challenge.user.updateUserDTO;
 import io.swagger.v3.oas.annotations.Operation;
-import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
-import jakarta.validation.Valid;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Date;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/users")
+@RequestMapping("users")
 public class UserController {
     private final UserService userService;
 
@@ -29,33 +20,37 @@ public class UserController {
 
     @PostMapping
     @Operation(summary = "Cadastro de usuário")
+    @Transactional
     public ResponseEntity<User> saveUser(@RequestBody User user) {
         return userService.saveUser(user);
     }
 
     @GetMapping
     @Operation(summary = "Ficha de usuários")
+    @Transactional
     public List<User> getAllUsers() {
         return userService.fetchAllUsers();
     }
 
     @GetMapping("/{id}")
     @Operation(summary = "Encontre usuário por ID")
+    @Transactional
     public ResponseEntity<User> getUserById(@PathVariable Long id) {
-        User user = userService.fetchProductById(id);
+        User user = userService.fetchUserById(id);
         return ResponseEntity.ok(user);
     }
 
     @PutMapping("/{userId}")
     @Operation(summary = "Atualização de usuário")
+    @Transactional
     public ResponseEntity<User> updateUser(@PathVariable Long userId, @RequestBody User user) {
         return userService.updateUser(userId, user);
     }
 
     @DeleteMapping("/{id}")
     @Operation(summary = "Eliminação de usuário por ID")
-    public String deleteUser(@PathVariable Long id) {
-        userService.deleteUser(id);
-        return "User Deleted Successfully by ID " + id;
+    @Transactional
+    public ResponseEntity<String> deleteUser(@PathVariable Long id) {
+        return userService.deleteUser(id);
     }
 }
