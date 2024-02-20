@@ -1,171 +1,85 @@
-[__
-{__
-"id": 1,__
-"name": "Spike Spiegel",__
-"cpf": "111222333444",__
-"birthdate": "1992-02-27",__
-"cellphone": "51999090832",__
-"address": {__
-"street": "Mars Avenue",__
-"number": "27",__
-"neighborhood": "Mars Valley",__
-"city": "New Texas",__
-"state": "Arizona"__
-}__
-},__
-{__
-"id": 2,__
-"name": "Naruto Uzumaki",__
-"cpf": "444555666777",__
-"birthdate": "2000-12-20",__
-"cellphone": "5192133312331",__
-"address": {__
-"street": "Leaf Street",__
-"number": "42",__
-"neighborhood": "Leaf Neighborhood",__
-"city": "Konoha",__
-"state": "Fire Country"__
-}__
-},__
-{__
-"id": 3,__
-"name": "Edward Elric",__
-"cpf": "9998880900222",__
-"birthdate": "1909-11-07",__
-"cellphone": "519992020202",__
-"address": {__
-"street": "Central Avenue",__
-"number": "17",__
-"neighborhood": "Amestris Central Plaza",__
-"city": "Central City",__
-"state": "Amestris"__
-}__
-},__
-{__
-"id": 4,__
-"name": "Saitama",__
-"cpf": "000898727980",__
-"birthdate": "1994-05-30",__
-"cellphone": "51998800997766",__
-"address": {__
-"street": "Z Street",__
-"number": "20",__
-"neighborhood": "Z Neighborhood",__
-"city": "Z City",__
-"state": "Saitama Prefecture"__
-}__
-},__
-{__
-"id": 5,__
-"name": "Monkey D Luffy",__
-"cpf": "202039029320",__
-"birthdate": "1500-10-15",__
-"cellphone": "519920220222",__
-"address": {__
-"street": "Happy Street",__
-"number": "34",__
-"neighborhood": "Merry Going",__
-"city": "Syrup Village",__
-"state": "East Blue"__
-}__
-},__
-{__
-"id": 6,__
-"name": "Son Goku",__
-"cpf": "391392039213",__
-"birthdate": "2040-04-03",__
-"cellphone": "510009020022",__
-"address": {__
-"street": "by the Mountains",__
-"number": "No number",__
-"neighborhood": "Mountain Village", "city": "Mountain Fuji",__
-"state": "Japan"__
-}__
-}__
-]__
-=======
-[
-{
-"id": 1,
-"name": "Spike Spiegel",
-"cpf": "111222333444",
-"birthdate": "1992-02-27",
-"cellphone": "51999090832",
-"address": {
-"street": "Mars Avenue",
-"number": "27",
-"neighborhood": "Mars Valley",
-"city": "New Texas",
-"state": "Arizona"
-}
-},
-{
-"id": 2,
-"name": "Naruto Uzumaki",
-"cpf": "444555666777",
-"birthdate": "2000-12-20",
-"cellphone": "5192133312331",
-"address": {
-"street": "Leaf Street",
-"number": "42",
-"neighborhood": "Leaf Neighborhood",
-"city": "Konoha",
-"state": "Fire Country"
-}
-},
-{
-"id": 3,
-"name": "Edward Elric",
-"cpf": "9998880900222",
-"birthdate": "1909-11-07",
-"cellphone": "519992020202",
-"address": {
-"street": "Central Avenue",
-"number": "17",
-"neighborhood": "Amestris Central Plaza",
-"city": "Central City",
-"state": "Amestris"
-}
-},
-{
-"id": 4,
-"name": "Saitama",
-"cpf": "000898727980",
-"birthdate": "1994-05-30",
-"cellphone": "51998800997766",
-"address": {
-"street": "Z Street",
-"number": "20",
-"neighborhood": "Z Neighborhood",
-"city": "Z City",
-"state": "Saitama Prefecture"
-}
-},
-{
-"id": 5,
-"name": "Monkey D Luffy",
-"cpf": "202039029320",
-"birthdate": "1500-10-15",
-"cellphone": "519920220222",
-"address": {
-"street": "Happy Street",
-"number": "34",
-"neighborhood": "Merry Going",
-"city": "Syrup Village",
-"state": "East Blue"
-}
-},
-{
-"id": 6,
-"name": "Son Goku",
-"cpf": "391392039213",
-"birthdate": "2040-04-03",
-"cellphone": "510009020022",
-"address": {
-"street": "by the Mountains",
-"number": "No number",
-"neighborhood": "Mountain Village", "city": "Mountain Fuji",
-"state": "Japan"
-}__
-}__
-]__
+[  
+{  
+"id": 1,  
+"name": "Spike Spiegel",  
+"cpf": "111222333444",  
+"birthdate": "2041-05-27",  
+"cellphone": "51999090832",  
+"address": {  
+"street": "Mars Avenue",  
+"number": "27",  
+"neighborhood": "Mars Valley",  
+"city": "New Texas",  
+"state": "Arizona"  
+}  
+},  
+{  
+"id": 2,  
+"name": "Naruto Uzumaki",  
+"cpf": "444555666777",  
+"birthdate": "2000-04-30",  
+"cellphone": "5192133312331",  
+"address": {  
+"street": "Leaf Street",  
+"number": "42",  
+"neighborhood": "Leaf Neighborhood",  
+"city": "Konoha",  
+"state": "Fire Country"  
+}  
+},  
+{  
+"id": 3,  
+"name": "Edward Elric",  
+"cpf": "9998880900222",  
+"birthdate": "1890-08-21",  
+"cellphone": "519992020202",  
+"address": {  
+"street": "Central Avenue",  
+"number": "17",  
+"neighborhood": "Amestris Central Plaza",  
+"city": "Central City",  
+"state": "Amestris"  
+}  
+},  
+{  
+"id": 4,  
+"name": "Saitama",  
+"cpf": "000898727980",  
+"birthdate": "2000-01-29",  
+"cellphone": "51998800997766",  
+"address": {  
+"street": "Z Street",  
+"number": "20",  
+"neighborhood": "Z Neighborhood",  
+"city": "Z City",  
+"state": "Saitama Prefecture"  
+}  
+},  
+{  
+"id": 5,  
+"name": "Monkey D Luffy",  
+"cpf": "202039029320",  
+"birthdate": "1500-12-15",  
+"cellphone": "519920220222",  
+"address": {  
+"street": "Happy Street",  
+"number": "34",  
+"neighborhood": "Merry Going",  
+"city": "Syrup Village",  
+"state": "East Blue"  
+}  
+},  
+{  
+"id": 6,  
+"name": "Son Goku",  
+"cpf": "391392039213",  
+"birthdate": "2030-09-11",  
+"cellphone": "510009020022",  
+"address": {  
+"street": "by the Mountains",  
+"number": "No number",  
+"neighborhood": "Mountain Village", "city": "Mountain Fuji",  
+"state": "Japan"  
+}  
+}  
+]  
